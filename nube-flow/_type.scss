@@ -1,0 +1,32 @@
+@use "sass:math";
+@use "variables" as v;
+
+@each $key, $val in v.$font {
+  [class*="#{$key}"] {
+    font-size: $val;
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "t")) {
+  @each $key, $val in v.$font {
+    [class*="t_#{$key}"] {
+      font-size: $val;
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "ml")) {
+  @each $key, $val in v.$font {
+    [class*="ml_#{$key}"] {
+      font-size: $val;
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "m")) {
+  @each $key, $val in v.$font {
+    [class*="m_#{$key}"] {
+      font-size: $val;
+    }
+  }
+}

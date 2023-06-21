@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "variables" as v;
+
+@each $key, $val in v.$colors {
+  [class*="bg#{$key}"] {
+    background-color: $val;
+  }
+  [class*="c#{$key}"] {
+    color: $val;
+  }
+}

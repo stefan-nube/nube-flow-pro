@@ -1,0 +1,37 @@
+@forward "variables";
+@forward "base";
+@forward "spacing-util";
+@forward "layout-util";
+@forward "colors";
+@forward "type";
+@forward "ui-util";
+
+@use "sass:color";
+
+// [class*="gd"] {
+//   --column-count: 1;
+//   --column-span: 1;
+//   --row-span: 1;
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   grid-template-rows: auto;
+//   grid-column-gap: 1.5rem;
+//   grid-row-gap: 1.5rem;
+// }
+// [class*="gd"] > * {
+//   grid-column-start: span var(--column-span) !important;
+//   grid-column-end: span var(--column-span) !important;
+//   grid-row-start: span var(--row-span) !important;
+//   grid-row-end: span var(--row-span) !important;
+// }
+
+// [class*="gd"] > [class*="gdc"] {
+//   --column-span: 12;
+// }
+
+// [class*="gd"] > [class*="dc5"] {
+//   --column-span: 5;
+// }
+// [class*="gd"] > [class*="dr2"] {
+//   --row-span: 2;
+// }

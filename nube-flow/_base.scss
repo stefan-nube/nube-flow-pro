@@ -1,0 +1,100 @@
+@use "variables" as v;
+
+/* Snippet to improve the font quality */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+h1 {
+  letter-spacing: map-get(v.$font-spacing, "4");
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: map-get(v.$font, "x9");
+  line-height: map-get(v.$font-height, "4");
+}
+
+h2 {
+  letter-spacing: map-get(v.$font-spacing, "4");
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: map-get(v.$font, "x8");
+  line-height: map-get(v.$font-height, "3");
+}
+
+h3 {
+  letter-spacing: map-get(v.$font-spacing, "4");
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: map-get(v.$font, "x7");
+  line-height: map-get(v.$font-height, "2");
+}
+
+h4 {
+  letter-spacing: map-get(v.$font-spacing, "3");
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: map-get(v.$font, "x6");
+  line-height: map-get(v.$font-height, "2");
+}
+
+h5 {
+  letter-spacing: map-get(v.$font-spacing, "2");
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: map-get(v.$font, "x5");
+  line-height: map-get(v.$font-height, "1");
+}
+
+h6 {
+  letter-spacing: map-get(v.$font-spacing, "0");
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: map-get(v.$font, "x3");
+  line-height: map-get(v.$font-height, "0");
+}
+
+/* Snippet makes all link elements listed below to inherit color from their parent */
+a,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+
+/* Snippet gets rid of margin on first and last element in any rich text*/
+.w-richtext > :first-child {
+  margin-top: 0;
+}
+.w-richtext > :last-child,
+.w-richtext ol li:last-child,
+.w-richtext ul li:last-child {
+  margin-bottom: 0;
+}
+
+body {
+  background-color: map-get(v.$colors, "0");
+  color: map-get(v.$colors, "4");
+  font-size: map-get(v.$font, "x2");
+  line-height: map-get(v.$font-height, "0");
+  letter-spacing: map-get(v.$font-spacing, "0");
+}
+
+/* Snippet makes all svg icons scalable according to the parent font size */
+svg {
+  width: auto;
+  height: 100%;
+}
+/* Snippet makes all svg icons inherit fill color */
+svg path {
+  fill: currentColor !important;
+}

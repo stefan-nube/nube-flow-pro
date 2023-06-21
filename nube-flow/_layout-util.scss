@@ -1,0 +1,188 @@
+@use "variables" as v;
+
+.cnt {
+  width: 90%;
+  max-width: 90rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.cnt-m {
+  width: 90%;
+  max-width: 68rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.cnt-s {
+  width: 90%;
+  max-width: 40rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+  padding-bottom: 1.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  grid-row-gap: 1.5rem;
+}
+.col {
+  display: block;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+@media (max-width: 48rem) {
+  .col {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+$columns: (
+  "flex-basis": (
+    "prefix": "d",
+    "values": (
+      "1": 8.33%,
+      "2": 16.666%,
+      "3": 25%,
+      "4": 33.333%,
+      "5": 41.666%,
+      "6": 50%,
+      "7": 58.333%,
+      "8": 66.666%,
+      "9": 75%,
+      "10": 83.3333%,
+      "11": 91.67%,
+      "12": 100%,
+    ),
+  ),
+);
+
+// generate layout utility classes
+@each $property, $map in $columns {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}#{$k} {
+      #{$property}: $v;
+      max-width: $v;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  }
+}
+
+$columns-t: (
+  "flex-basis": (
+    "prefix": "t",
+    "values": (
+      "1": 8.33%,
+      "2": 16.666%,
+      "3": 25%,
+      "4": 33.333%,
+      "5": 41.666%,
+      "6": 50%,
+      "7": 58.333%,
+      "8": 66.666%,
+      "9": 75%,
+      "10": 83.3333%,
+      "11": 91.67%,
+      "12": 100%,
+    ),
+  ),
+);
+
+@media (max-width: #{map-get(v.$breakpoints, "t")}) {
+  @each $property, $map in $columns-t {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .#{$prefix}#{$k} {
+        #{$property}: $v;
+        max-width: $v;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+  }
+}
+
+$columns-ml: (
+  "flex-basis": (
+    "prefix": "ml",
+    "values": (
+      "1": 8.33%,
+      "2": 16.666%,
+      "3": 25%,
+      "4": 33.333%,
+      "5": 41.666%,
+      "6": 50%,
+      "7": 58.333%,
+      "8": 66.666%,
+      "9": 75%,
+      "10": 83.3333%,
+      "11": 91.67%,
+      "12": 100%,
+    ),
+  ),
+);
+
+@media (max-width: #{map-get(v.$breakpoints, "ml")}) {
+  @each $property, $map in $columns-ml {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .#{$prefix}#{$k} {
+        #{$property}: $v;
+        max-width: $v;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+  }
+}
+
+$columns-m: (
+  "flex-basis": (
+    "prefix": "m",
+    "values": (
+      "1": 8.33%,
+      "2": 16.666%,
+      "3": 25%,
+      "4": 33.333%,
+      "5": 41.666%,
+      "6": 50%,
+      "7": 58.333%,
+      "8": 66.666%,
+      "9": 75%,
+      "10": 83.3333%,
+      "11": 91.67%,
+      "12": 100%,
+    ),
+  ),
+);
+
+@media (max-width: #{map-get(v.$breakpoints, "m")}) {
+  @each $property, $map in $columns-m {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .#{$prefix}#{$k} {
+        #{$property}: $v;
+        max-width: $v;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+  }
+}

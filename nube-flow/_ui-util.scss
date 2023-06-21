@@ -1,0 +1,366 @@
+@use "variables" as v;
+
+// Flex utilities ////////////////////////////////////////////////////////////////////////
+
+$ui-common: (
+  "flex-direction": (
+    "prefix": "fd",
+    "values": (
+      "0": column,
+      "1": row,
+    ),
+  ),
+  "justify-content": (
+    "prefix": "fj",
+    "values": (
+      "0": start,
+      "1": center,
+      "2": end,
+      "3": space-between,
+      "4": space-around,
+    ),
+  ),
+  "align-items": (
+    "prefix": "fa",
+    "values": (
+      "0": start,
+      "1": center,
+      "2": end,
+      "3": stretch,
+      "4": baseline,
+    ),
+  ),
+);
+
+@each $property, $map in $ui-common {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $ui-common {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .t_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "ml")) {
+  @each $property, $map in $ui-common {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .ml_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "m")) {
+  @each $property, $map in $ui-common {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .m_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// Icons ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$icons {
+  [class*="icon-#{$key}"] {
+    display: flex;
+    height: $val;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  [class*="icon-#{$key}-#{$key}"] {
+    display: flex;
+    height: $val;
+    width: $val;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Icons relative ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$icons-rel {
+  [class*="icon-#{$key}"] {
+    display: flex;
+    height: $val;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  [class*="icon-#{$key}-#{$key}"] {
+    display: flex;
+    height: $val;
+    width: $val;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Text alignment ////////////////////////////////////////////////////////////////////////
+
+$txt-align: (
+  "font-weight": (
+    "prefix": "ta",
+    "values": (
+      "0": center,
+      "1": left,
+      "2": right,
+    ),
+  ),
+);
+
+@each $property, $map in $txt-align {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $txt-align {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .t_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "ml")) {
+  @each $property, $map in $txt-align {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .ml_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "m")) {
+  @each $property, $map in $txt-align {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .m_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// Text transform ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$font-weight {
+  [class*="tw#{$key}"] {
+    font-weight: $val;
+  }
+}
+
+// Line height ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$font-height {
+  [class*="th#{$key}"] {
+    line-height: $val;
+  }
+}
+
+// Letter spacing ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$font-spacing {
+  [class*="ts#{$key}"] {
+    letter-spacing: $val;
+  }
+}
+
+// Text transform ////////////////////////////////////////////////////////////////////////
+
+$txt-transform: (
+  "text-transform": (
+    "prefix": "tt",
+    "values": (
+      "0": lowercase,
+      "1": capitalize,
+      "2": uppercase,
+    ),
+  ),
+);
+
+@each $property, $map in $txt-transform {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    [class*="#{$prefix}#{$k}"] {
+      #{$property}: $v;
+    }
+  }
+}
+
+// Display ////////////////////////////////////////////////////////////////////////
+
+$display: (
+  "display": (
+    "prefix": "ed",
+    "values": (
+      "0": hidden,
+      "1": block,
+      "2": flex,
+      "3": grid,
+      "4": inline-block,
+      "5": inline,
+      "6": inline-flex,
+    ),
+  ),
+);
+
+@each $property, $map in $display {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $display {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "ml")) {
+  @each $property, $map in $display {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "m")) {
+  @each $property, $map in $display {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .m_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// Position ////////////////////////////////////////////////////////////////////////
+
+$position: (
+  "position": (
+    "prefix": "ep",
+    "values": (
+      "0": static,
+      "1": relative,
+      "2": absolute,
+      "3": fixed,
+      "4": sticky,
+    ),
+  ),
+);
+
+@each $property, $map in $position {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $position {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .t_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "ml")) {
+  @each $property, $map in $position {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .ml_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (max-width: map-get(v.$breakpoints, "m")) {
+  @each $property, $map in $position {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      .m_#{$prefix}#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
