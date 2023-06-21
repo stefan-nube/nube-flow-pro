@@ -3,13 +3,16 @@
 html {
   // base color values
   --col-0: #ffffff;
-  --col-3: #f0f2f4;
+  --col-0-1: #f0f2f4;
+  --col-0-2: #d1d5db;
   // core/text color values
   --col-1: #0c111c;
-  --col-4: #1c2431;
+  --col-1-1: #1c2431;
+  --col-1-2: #6b7280;
   // accent color values
   --col-2: #165ff2;
-  --col-5: #f2f5fd;
+  --col-2-1: #5aa7ff;
+  --col-2-2: #f2f5fd;
 
   //font size values
   --x0: 0.75rem;
@@ -48,11 +51,14 @@ html {
 // color palette
 $colors: (
   "0": var(--col-0),
+  "0-1": var(--col-0-1),
+  "0-2": var(--col-0-2),
   "1": var(--col-1),
+  "1-1": var(--col-1-1),
+  "1-2": var(--col-1-2),
   "2": var(--col-2),
-  "3": var(--col-3),
-  "4": var(--col-4),
-  "5": var(--col-5),
+  "2-1": var(--col-2-1),
+  "2-2": var(--col-2-2),
 );
 
 // font sizes

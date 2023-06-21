@@ -1,10 +1,13 @@
 html {
   --col-0: #ffffff;
-  --col-3: #f0f2f4;
+  --col-0-1: #f0f2f4;
+  --col-0-2: #d1d5db;
   --col-1: #0c111c;
-  --col-4: #1c2431;
+  --col-1-1: #1c2431;
+  --col-1-2: #6b7280;
   --col-2: #165ff2;
-  --col-5: #f2f5fd;
+  --col-2-1: #5aa7ff;
+  --col-2-2: #f2f5fd;
   --x0: 0.75rem;
   --x1: 0.875rem;
   --x2: 1rem;
@@ -116,7 +119,6 @@ a,
 
 body {
   background-color: var(--col-0);
-  color: var(--col-4);
   font-size: var(--x2);
   line-height: var(--h0);
   letter-spacing: var(--s0);
@@ -1806,12 +1808,44 @@ svg path {
   color: var(--col-0);
 }
 
+[class*=bg0-1] {
+  background-color: var(--col-0-1);
+}
+
+[class*=c0-1] {
+  color: var(--col-0-1);
+}
+
+[class*=bg0-2] {
+  background-color: var(--col-0-2);
+}
+
+[class*=c0-2] {
+  color: var(--col-0-2);
+}
+
 [class*=bg1] {
   background-color: var(--col-1);
 }
 
 [class*=c1] {
   color: var(--col-1);
+}
+
+[class*=bg1-1] {
+  background-color: var(--col-1-1);
+}
+
+[class*=c1-1] {
+  color: var(--col-1-1);
+}
+
+[class*=bg1-2] {
+  background-color: var(--col-1-2);
+}
+
+[class*=c1-2] {
+  color: var(--col-1-2);
 }
 
 [class*=bg2] {
@@ -1822,28 +1856,20 @@ svg path {
   color: var(--col-2);
 }
 
-[class*=bg3] {
-  background-color: var(--col-3);
+[class*=bg2-1] {
+  background-color: var(--col-2-1);
 }
 
-[class*=c3] {
-  color: var(--col-3);
+[class*=c2-1] {
+  color: var(--col-2-1);
 }
 
-[class*=bg4] {
-  background-color: var(--col-4);
+[class*=bg2-2] {
+  background-color: var(--col-2-2);
 }
 
-[class*=c4] {
-  color: var(--col-4);
-}
-
-[class*=bg5] {
-  background-color: var(--col-5);
-}
-
-[class*=c5] {
-  color: var(--col-5);
+[class*=c2-2] {
+  color: var(--col-2-2);
 }
 
 [class*=x0] {
