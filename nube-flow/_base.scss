@@ -59,7 +59,6 @@ h6 {
   line-height: map-get(v.$font-height, "0");
 }
 
-/* Snippet makes all link elements listed below to inherit color from their parent */
 a,
 .w-tab-link,
 .w-nav-link,
@@ -69,9 +68,15 @@ a,
   color: inherit;
   text-decoration: inherit;
   font-size: inherit;
+  padding-inline: 0.25rem;
+  outline-color: map-get(v.$colors, "2-2");
 }
 
-/* Snippet gets rid of margin on first and last element in any rich text*/
+p,
+label {
+  margin-bottom: 0;
+}
+
 .w-richtext > :first-child {
   margin-top: 0;
 }
@@ -83,13 +88,12 @@ a,
 
 body {
   background-color: map-get(v.$colors, "0");
-  color: map-get(v.$colors, "4");
+  color: map-get(v.$colors, "1-1");
   font-size: map-get(v.$font, "x2");
   line-height: map-get(v.$font-height, "0");
   letter-spacing: map-get(v.$font-spacing, "0");
 }
 
-/* Snippet makes all svg icons scalable according to the parent font size */
 svg {
   width: auto;
   height: 100%;

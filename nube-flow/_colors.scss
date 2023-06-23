@@ -5,7 +5,13 @@
   [class*="bg#{$key}"] {
     background-color: $val;
   }
-  [class*="c#{$key}"] {
+  [class*="fc#{$key}"] {
     color: $val;
+  }
+  [class*="bc#{$key}"] {
+    border-color: $val;
+  }
+  [class*="sc#{$key}"] {
+    -webkit-text-stroke-color: $val;
   }
 }

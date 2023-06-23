@@ -1,0 +1,63 @@
+@use "variables" as v;
+
+.w-input,
+.w-select,
+.w-checkbox-input,
+.input {
+  padding: var(--f-padding);
+  background-color: var(--f-bg);
+  border-color: var(--f-border);
+  outline-color: var(--f-outline);
+  color: var(--f-text);
+  margin-bottom: 0;
+}
+
+.w-input::placeholder,
+.w-select::placeholder {
+  color: var(--f-place);
+}
+
+.w-input:focus,
+.w-select:focus {
+  border-color: var(--f-border-h);
+  color: var(--f-text);
+}
+
+.input-label {
+  font-size: var(--f-label-size);
+}
+
+.input-txt {
+  font-size: var(--f-txt-size);
+  color: var(--f-txt-color);
+  font-weight: var(--w1);
+}
+
+.w-checkbox {
+  margin-bottom: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.w-checkbox-input {
+  margin: 0;
+  float: none;
+}
+
+.w-checkbox > .w-form-label {
+  padding-left: var(--f-check-space);
+}
+
+.w-checkbox-input.w--redirected-checked {
+  background-color: var(--f-check-color);
+  border-color: var(--f-check-color);
+}
+.w-radio-input.w--redirected-checked {
+  background-color: var(--f-check-color);
+  border-color: var(--f-check-color);
+}
+
+.w-checkbox-input--inputType-custom.w--redirected-checked {
+  background-image: var(--);
+}

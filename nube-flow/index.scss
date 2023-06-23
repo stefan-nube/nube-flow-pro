@@ -1,10 +1,11 @@
 @forward "variables";
 @forward "base";
-@forward "spacing-util";
-@forward "layout-util";
 @forward "colors";
 @forward "type";
+@forward "layout-util";
+@forward "spacing-util";
 @forward "ui-util";
+@forward "components";
 
 @use "sass:color";
 

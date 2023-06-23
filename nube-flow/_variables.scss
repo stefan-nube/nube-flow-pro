@@ -46,6 +46,20 @@ html {
   --s2: -0.019em;
   --s3: -0.021em;
   --s4: -0.022em;
+
+  //form values
+  --f-bg: var(--col-0);
+  --f-border: var(--col-0-1);
+  --f-outline: var(--col-2-2);
+  --f-text: var(--col-1-1);
+  --f-place: var(--col-1-2);
+
+  --f-padding: 0.5rem;
+  --f-label-size: 0.875em;
+  --f-txt-size: 0.75em;
+  --f-check-space: 0.5rem;
+  --f-check-color: var(--col-2);
+  --f-check-icon: url("https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg");
 }
 
 // color palette

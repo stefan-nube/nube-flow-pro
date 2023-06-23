@@ -19,8 +19,7 @@
   );
 
   @each $k, $v in $values {
-    $class-name: if($k == "0", $prefix, "#{$prefix}#{$k}");
-    .#{$class-name} {
+    [class*="#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
