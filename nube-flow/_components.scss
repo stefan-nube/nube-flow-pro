@@ -1,15 +1,54 @@
 @use "variables" as v;
 
+.btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-fc);
+  border-color: var(--btn-bc);
+  font-weight: var(--btn-fw);
+  font-size: var(--btn-fs);
+  outline-color: var(--btn-oc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.sec {
+  background-color: var(--btn-sec-bg);
+  color: var(--btn-sec-fc);
+  border-color: var(--btn-sec-bc);
+}
+
+.btn.sm {
+  font-weight: var(--btn-sm-fw);
+  font-size: var(--btn-sm-fs);
+}
+
+.btn > .w-embed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--btn-icon-size);
+  height: var(--btn-icon-size);
+}
+
+.btn.sm > .w-embed {
+  font-weight: var(--btn-sm-fw);
+  font-size: var(--btn-sm-fs);
+  width: var(--btn-sm-icon-size);
+  height: var(--btn-sm-icon-size);
+}
+
 .w-input,
 .w-select,
 .w-checkbox-input,
-.input {
+.w-radio-input {
   padding: var(--f-padding);
   background-color: var(--f-bg);
   border-color: var(--f-border);
   outline-color: var(--f-outline);
   color: var(--f-text);
   margin-bottom: 0;
+  border-radius: var(--f-radius);
 }
 
 .w-input::placeholder,
@@ -43,21 +82,51 @@
 .w-checkbox-input {
   margin: 0;
   float: none;
+  border-radius: var(--f-check-radius);
 }
 
 .w-checkbox > .w-form-label {
   padding-left: var(--f-check-space);
 }
 
-.w-checkbox-input.w--redirected-checked {
+.w-radio {
+  margin-bottom: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.w-radio-input {
+  margin: 0;
+  float: none;
+}
+
+.w-radio > .w-form-label {
+  padding-left: var(--f-check-space);
+}
+
+.input.w-checkbox-input.w--redirected-checked {
   background-color: var(--f-check-color);
   border-color: var(--f-check-color);
 }
-.w-radio-input.w--redirected-checked {
+.input.w-radio-input.w--redirected-checked {
   background-color: var(--f-check-color);
   border-color: var(--f-check-color);
 }
 
-.w-checkbox-input--inputType-custom.w--redirected-checked {
-  background-image: var(--);
+.input.w-checkbox-input--inputType-custom.w--redirected-checked {
+  background-image: var(--f-check-icon);
+}
+
+.input.w-checkbox-input--inputType-custom.w--redirected-focus {
+  box-shadow: 1px 0 0.25rem 0.125rem rgba(0, 0, 0, 0.02);
+}
+
+.input.w-form-formradioinput--inputType-custom.w--redirected-focus {
+  box-shadow: 1px 0 0.25rem 0.125rem rgba(0, 0, 0, 0.02);
+  border-width: var(--f-radio-border);
+}
+
+.input.w-form-formradioinput--inputType-custom.w--redirected-checked {
+  border-width: var(--f-radio-border);
 }

@@ -85,14 +85,14 @@ $ui-common: (
 // Icons ////////////////////////////////////////////////////////////////////////
 
 @each $key, $val in v.$icons {
-  [class*="icon-#{$key}"] {
+  [class*="icon#{$key}"] {
     display: flex;
     height: $val;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  [class*="icon-#{$key}-#{$key}"] {
+  [class*="icon#{$key}-#{$key}"] {
     display: flex;
     height: $val;
     width: $val;
@@ -125,11 +125,11 @@ $ui-common: (
 // Text alignment ////////////////////////////////////////////////////////////////////////
 
 $txt-align: (
-  "font-weight": (
+  "text-align": (
     "prefix": "ta",
     "values": (
-      "0": center,
-      "1": left,
+      "0": left,
+      "1": center,
       "2": right,
     ),
   ),
@@ -362,5 +362,107 @@ $position: (
         #{$property}: $v;
       }
     }
+  }
+}
+
+// Border radius ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$border-radius {
+  [class*="br#{$key}"] {
+    border-radius: $val;
+  }
+}
+
+// Border width ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$border-width {
+  [class*="bw#{$key}"] {
+    border-width: $val;
+  }
+}
+
+// Overflow ////////////////////////////////////////////////////////////////////////
+
+$overflow: (
+  "overflow": (
+    "prefix": "of",
+    "values": (
+      "0": visible,
+      "1": scroll,
+      "2": auto,
+      "3": hidden,
+    ),
+  ),
+);
+
+@each $property, $map in $overflow {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    [class*="#{$prefix}#{$k}"] {
+      #{$property}: $v;
+    }
+  }
+}
+
+// Overflow ////////////////////////////////////////////////////////////////////////
+
+$overflow-x: (
+  "overflow-x": (
+    "prefix": "ox",
+    "values": (
+      "0": visible,
+      "1": scroll,
+      "2": auto,
+      "3": hidden,
+    ),
+  ),
+);
+
+@each $property, $map in $overflow-x {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    [class*="#{$prefix}#{$k}"] {
+      #{$property}: $v;
+      overflow-y: hidden;
+    }
+  }
+}
+
+// Overflow-y ////////////////////////////////////////////////////////////////////////
+
+$overflow-y: (
+  "overflow-y": (
+    "prefix": "oy",
+    "values": (
+      "0": visible,
+      "1": scroll,
+      "2": auto,
+      "3": hidden,
+    ),
+  ),
+);
+
+@each $property, $map in $overflow-y {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    [class*="#{$prefix}#{$k}"] {
+      #{$property}: $v;
+      overflow-x: hidden;
+    }
+  }
+}
+
+// Ratio ////////////////////////////////////////////////////////////////////////
+
+@each $key, $val in v.$ratio {
+  [class*="ar#{$key}"] {
+    aspect-ratio: $val;
+    position: relative;
   }
 }

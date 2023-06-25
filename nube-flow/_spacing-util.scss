@@ -11,7 +11,7 @@
     "12": v.$space * 0.75,
     "16": v.$space,
     "18": v.$space * 1.125,
-    "20": v.$space * 1.25 * $multiplier,
+    "20": v.$space * 1.25,
     "24": v.$space * 1.5 * $multiplier,
     "32": v.$space * 2 * $multiplier,
     "40": v.$space * 2.5 * $multiplier,
@@ -64,11 +64,11 @@ $spacing: (
   @include generate-padding-values($prefix, $property, 1);
 
   @media (max-width: #{map-get(v.$breakpoints, "t")}) {
-    @include generate-padding-values($prefix, $property, 0.75);
+    @include generate-padding-values($prefix, $property, 1);
   }
 
   @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
-    @include generate-padding-values($prefix, $property, 0.5);
+    @include generate-padding-values($prefix, $property, 0.875);
   }
 }
 
@@ -84,8 +84,8 @@ $spacing: (
     "12": v.$space * 0.75,
     "16": v.$space,
     "18": v.$space * 1.125,
-    "20": v.$space * 1.25 * $multiplier,
-    "24": v.$space * 1.5 * $multiplier,
+    "20": v.$space * 1.25,
+    "24": v.$space * 1.5,
     "32": v.$space * 2 * $multiplier,
     "40": v.$space * 2.5 * $multiplier,
     "48": v.$space * 3 * $multiplier,
@@ -121,10 +121,10 @@ $gap-values: (
   @include generate-gap-values($property, $prefix, 1);
 
   @media (max-width: #{map-get(v.$breakpoints, "t")}) {
-    @include generate-gap-values($property, $prefix, 0.75);
+    @include generate-gap-values($property, $prefix, 1);
   }
 
   @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
-    @include generate-gap-values($property, $prefix, 0.5);
+    @include generate-gap-values($property, $prefix, 0.875);
   }
 }

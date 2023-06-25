@@ -47,9 +47,51 @@ html {
   --s3: -0.021em;
   --s4: -0.022em;
 
+  //border radius values
+  --br0: 0.25rem;
+  --br1: 0.5em;
+  --br2: 1em;
+  --br3: 1.5em;
+  --br4: 2em;
+
+  //border width values
+  --bw0: 0.5px;
+  --bw1: 1px;
+  --bw2: 1.5em;
+  --bw3: 0.125rem;
+  --bw4: 0.25rem;
+
+  //border width values
+  --ar0: 1/1;
+  --ar1: 2/3;
+  --ar2: 3/2;
+  --ar3: 9/16;
+  --ar4: 16/9;
+
+  //button values
+  //prim values
+  --btn-bg: var(--col-2);
+  --btn-bc: var(--col-2);
+  --btn-fc: var(--col-0);
+  //general values
+  --btn-oc: var(--col-2-2);
+  --btn-fs: var(--x3);
+  --btn-fw: var(--w2);
+  --btn-icon-size: 1.2em;
+
+  //sec values
+  --btn-sec-bg: transparent;
+  --btn-sec-bc: var(--col-1);
+  --btn-sec-fc: var(--col-1);
+  //small values
+  --btn-sm-fs: var(--x2);
+  --btn-sm-fw: var(--w2);
+  --btn-sm-icon-size: 1em;
+
   //form values
   --f-bg: var(--col-0);
   --f-border: var(--col-0-1);
+  --f-radius: 0.5rem;
   --f-outline: var(--col-2-2);
   --f-text: var(--col-1-1);
   --f-place: var(--col-1-2);
@@ -58,8 +100,10 @@ html {
   --f-label-size: 0.875em;
   --f-txt-size: 0.75em;
   --f-check-space: 0.5rem;
+  --f-check-radius: 0.125rem;
   --f-check-color: var(--col-2);
-  --f-check-icon: url("https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg");
+  --f-check-icon: url("https://cdn.jsdelivr.net/gh/stefan-nube/nube-flow-pro@v0.2.0/nf-check_icon.svg");
+  --f-radio-border: 1.2px;
 }
 
 // color palette
@@ -142,4 +186,31 @@ $icons-rel: (
   "m": 1em,
   "l": 1.25em,
   "xl": 1.5em,
+);
+
+// border radius
+$border-radius: (
+  "0": var(--br0),
+  "1": var(--br1),
+  "2": var(--br2),
+  "3": var(--br3),
+  "4": var(--br4),
+);
+
+// border width
+$border-width: (
+  "0": var(--bw0),
+  "1": var(--bw1),
+  "2": var(--bw2),
+  "3": var(--bw3),
+  "4": var(--bw4),
+);
+
+// ratio sizes
+$ratio: (
+  "1x1": var(--ar0),
+  "2x3": var(--ar1),
+  "3x2": var(--ar2),
+  "9x16": var(--ar3),
+  "16x9": var(--ar4),
 );

@@ -70,6 +70,15 @@ a,
   font-size: inherit;
   padding-inline: 0.25rem;
   outline-color: map-get(v.$colors, "2-2");
+  outline-offset: 0px;
+  outline-style: solid;
+  outline-width: 0px;
+}
+
+a:focus-visible {
+  outline-offset: 0px;
+  outline-style: solid;
+  outline-width: 2px;
 }
 
 p,
@@ -92,13 +101,4 @@ body {
   font-size: map-get(v.$font, "x2");
   line-height: map-get(v.$font-height, "0");
   letter-spacing: map-get(v.$font-spacing, "0");
-}
-
-svg {
-  width: auto;
-  height: 100%;
-}
-/* Snippet makes all svg icons inherit fill color */
-svg path {
-  fill: currentColor !important;
 }
