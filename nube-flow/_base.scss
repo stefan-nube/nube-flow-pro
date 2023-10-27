@@ -1,6 +1,5 @@
 @use "variables" as v;
 
-/* Snippet to improve the font quality */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,52 +10,59 @@ body {
   overscroll-behavior: none;
 }
 
+.page {
+  overflow: clip;
+}
+
 h1 {
-  letter-spacing: map-get(v.$font-spacing, "4");
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: map-get(v.$font, "x9");
-  line-height: map-get(v.$font-height, "4");
+  margin-block: 0;
+  font-size: var(--primitives--size--text--x9);
+  letter-spacing: var(--primitives--size--text--spacing--4);
+  line-height: var(--primitives--size--text--height--4);
 }
 
 h2 {
-  letter-spacing: map-get(v.$font-spacing, "4");
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: map-get(v.$font, "x8");
-  line-height: map-get(v.$font-height, "3");
+  margin-block: 0;
+  font-size: var(--primitives--size--text--x8);
+  letter-spacing: var(--primitives--size--text--spacing--3);
+  line-height: var(--primitives--size--text--height--4);
 }
 
 h3 {
-  letter-spacing: map-get(v.$font-spacing, "4");
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: map-get(v.$font, "x7");
-  line-height: map-get(v.$font-height, "2");
+  margin-block: 0;
+  font-size: var(--primitives--size--text--x7);
+  letter-spacing: var(--primitives--size--text--spacing--2);
+  line-height: var(--primitives--size--text--height--4);
 }
 
 h4 {
-  letter-spacing: map-get(v.$font-spacing, "3");
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: map-get(v.$font, "x6");
-  line-height: map-get(v.$font-height, "2");
+  margin-block: 0;
+  font-size: var(--primitives--size--text--x6);
+  letter-spacing: var(--primitives--size--text--spacing--2);
+  line-height: var(--primitives--size--text--height--3);
 }
 
 h5 {
-  letter-spacing: map-get(v.$font-spacing, "2");
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: map-get(v.$font, "x5");
-  line-height: map-get(v.$font-height, "1");
+  margin-block: 0;
+  font-size: var(--primitives--size--text--x5);
+  letter-spacing: var(--primitives--size--text--spacing--1);
+  line-height: var(--primitives--size--text--height--2);
 }
 
 h6 {
-  letter-spacing: map-get(v.$font-spacing, "0");
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: map-get(v.$font, "x3");
-  line-height: map-get(v.$font-height, "0");
+  margin-block: 0;
+  font-size: var(--primitives--size--text--x3);
+  letter-spacing: var(--primitives--size--text--spacing--0);
+  line-height: var(--primitives--size--text--height--0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--tokens--color--text--secondary);
 }
 
 a,
@@ -69,7 +75,7 @@ a,
   text-decoration: inherit;
   font-size: inherit;
   padding-inline: 0.25rem;
-  outline-color: map-get(v.$colors, "2-2");
+  outline-color: var(--primitives--color--brand--1-0);
   outline-offset: 0px;
   outline-style: solid;
   outline-width: 0px;
@@ -99,10 +105,19 @@ p {
   margin-bottom: 0;
 }
 
+[class*="icon"] svg {
+  width: auto !important;
+  height: 100% !important;
+}
+
+[class*="icon"] svg path {
+  fill: currentColor !important;
+}
+
 body {
-  background-color: map-get(v.$colors, "0");
-  color: map-get(v.$colors, "1-1");
-  font-size: map-get(v.$font, "x2");
-  line-height: map-get(v.$font-height, "0");
-  letter-spacing: map-get(v.$font-spacing, "0");
+  background-color: var(--tokens--color--surface--primary);
+  color: var(--tokens--color--text--secondary);
+  font-size: var(--primitives--size--text--x2);
+  letter-spacing: var(--primitives--size--text--spacing--0);
+  line-height: var(--primitives--size--text--height--0);
 }

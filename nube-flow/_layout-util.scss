@@ -1,52 +1,34 @@
 @use "variables" as v;
 
-.cnt {
+[class*="cnt"] {
   width: 90%;
   max-width: 90rem;
   margin-right: auto;
   margin-left: auto;
 }
-.cnt-m {
-  width: 90%;
-  max-width: 68rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-.cnt-s {
-  width: 90%;
-  max-width: 40rem;
-  margin-right: auto;
-  margin-left: auto;
+
+:root {
+  --grid-gap: 0.75rem;
 }
 
-.row {
-  position: relative;
+[class*="rw"] {
   display: flex;
-  margin-right: -0.75rem;
-  margin-left: -0.75rem;
-  padding-bottom: 1.5rem;
-  flex-direction: row;
   flex-wrap: wrap;
-  align-items: stretch;
-  grid-row-gap: 1.5rem;
+  margin-right: calc(-1 * var(--grid-gap));
+  margin-left: calc(-1 * var(--grid-gap));
 }
-.col {
-  display: block;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+
+[class*="clm"] {
+  padding-right: var(--grid-gap);
+  padding-left: var(--grid-gap);
+  flex-basis: 0;
   flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0%;
+  max-width: 100%;
 }
-@media (max-width: 48rem) {
-  .col {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-  }
-}
+
 $columns: (
   "flex-basis": (
-    "prefix": "d",
+    "prefix": "xs",
     "values": (
       "1": 8.33%,
       "2": 16.666%,
@@ -64,13 +46,11 @@ $columns: (
   ),
 );
 
-// generate layout utility classes
 @each $property, $map in $columns {
-  $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    .#{$prefix}#{$k} {
+    [class*="clm"][class*="xs#{$k}"] {
       #{$property}: $v;
       max-width: $v;
       flex-grow: 1;
@@ -79,33 +59,13 @@ $columns: (
   }
 }
 
-$columns-t: (
-  "flex-basis": (
-    "prefix": "t",
-    "values": (
-      "1": 8.33%,
-      "2": 16.666%,
-      "3": 25%,
-      "4": 33.333%,
-      "5": 41.666%,
-      "6": 50%,
-      "7": 58.333%,
-      "8": 66.666%,
-      "9": 75%,
-      "10": 83.3333%,
-      "11": 91.67%,
-      "12": 100%,
-    ),
-  ),
-);
-
-@media (max-width: #{map-get(v.$breakpoints, "t")}) {
-  @each $property, $map in $columns-t {
-    $prefix: map-get($map, "prefix");
+// generate landscape columns
+@media (min-width: #{map-get(v.$breakpoints, "m")}) {
+  @each $property, $map in $columns {
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .#{$prefix}#{$k} {
+      [class*="clm"][class*="sm#{$k}"] {
         #{$property}: $v;
         max-width: $v;
         flex-grow: 1;
@@ -115,33 +75,13 @@ $columns-t: (
   }
 }
 
-$columns-ml: (
-  "flex-basis": (
-    "prefix": "ml",
-    "values": (
-      "1": 8.33%,
-      "2": 16.666%,
-      "3": 25%,
-      "4": 33.333%,
-      "5": 41.666%,
-      "6": 50%,
-      "7": 58.333%,
-      "8": 66.666%,
-      "9": 75%,
-      "10": 83.3333%,
-      "11": 91.67%,
-      "12": 100%,
-    ),
-  ),
-);
-
-@media (max-width: #{map-get(v.$breakpoints, "ml")}) {
-  @each $property, $map in $columns-ml {
-    $prefix: map-get($map, "prefix");
+// generate tablet columns
+@media (min-width: #{map-get(v.$breakpoints, "ml")}) {
+  @each $property, $map in $columns {
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .#{$prefix}#{$k} {
+      [class*="clm"][class*="md#{$k}"] {
         #{$property}: $v;
         max-width: $v;
         flex-grow: 1;
@@ -151,33 +91,13 @@ $columns-ml: (
   }
 }
 
-$columns-m: (
-  "flex-basis": (
-    "prefix": "m",
-    "values": (
-      "1": 8.33%,
-      "2": 16.666%,
-      "3": 25%,
-      "4": 33.333%,
-      "5": 41.666%,
-      "6": 50%,
-      "7": 58.333%,
-      "8": 66.666%,
-      "9": 75%,
-      "10": 83.3333%,
-      "11": 91.67%,
-      "12": 100%,
-    ),
-  ),
-);
-
-@media (max-width: #{map-get(v.$breakpoints, "m")}) {
-  @each $property, $map in $columns-m {
-    $prefix: map-get($map, "prefix");
+// generate desktop columns
+@media (min-width: #{map-get(v.$breakpoints, "t")}) {
+  @each $property, $map in $columns {
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .#{$prefix}#{$k} {
+      [class*="clm"][class*="lg#{$k}"] {
         #{$property}: $v;
         max-width: $v;
         flex-grow: 1;

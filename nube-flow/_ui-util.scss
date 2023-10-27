@@ -37,7 +37,7 @@ $ui-common: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    .#{$prefix}#{$k} {
+    [class*="lg_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
@@ -49,7 +49,7 @@ $ui-common: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .t_#{$prefix}#{$k} {
+      [class*="md_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -62,7 +62,7 @@ $ui-common: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .ml_#{$prefix}#{$k} {
+      [class*="sm_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -75,7 +75,7 @@ $ui-common: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .m_#{$prefix}#{$k} {
+      [class*="xs_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -140,45 +140,45 @@ $txt-align: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    .#{$prefix}#{$k} {
+    [class*="#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $txt-align {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .t_#{$prefix}#{$k} {
+      [class*="sm_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
   @each $property, $map in $txt-align {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .ml_#{$prefix}#{$k} {
+      [class*="md_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "t")) {
   @each $property, $map in $txt-align {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .m_#{$prefix}#{$k} {
+      [class*="lg_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -255,7 +255,7 @@ $display: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    .#{$prefix}#{$k} {
+    [class*="lg_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
@@ -267,7 +267,7 @@ $display: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .#{$prefix}#{$k} {
+      [class*="md_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -280,7 +280,7 @@ $display: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .#{$prefix}#{$k} {
+      [class*="sm_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -293,7 +293,7 @@ $display: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .m_#{$prefix}#{$k} {
+      [class*="xs_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -320,7 +320,7 @@ $position: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    .#{$prefix}#{$k} {
+    [class*="lg_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
@@ -332,7 +332,7 @@ $position: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .t_#{$prefix}#{$k} {
+      [class*="md_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -345,7 +345,7 @@ $position: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .ml_#{$prefix}#{$k} {
+      [class*="sm_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -358,7 +358,7 @@ $position: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      .m_#{$prefix}#{$k} {
+      [class*="xs_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }

@@ -3,7 +3,7 @@
 
 @each $key, $val in v.$colors {
   [class*="bg#{$key}"] {
-    background-color: $val;
+    background: $val;
   }
   [class*="fc#{$key}"] {
     color: $val;

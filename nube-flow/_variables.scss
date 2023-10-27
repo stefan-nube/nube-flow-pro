@@ -1,51 +1,26 @@
 @use "sass:color";
 
 html {
-  // base color values
-  --col-0: #ffffff;
-  --col-0-1: #f0f2f4;
-  --col-0-2: #d1d5db;
-  // core/text color values
-  --col-1: #0c111c;
-  --col-1-1: #1c2431;
-  --col-1-2: #6b7280;
-  // accent color values
-  --col-2: #165ff2;
-  --col-2-1: #5aa7ff;
-  --col-2-2: #f2f5fd;
-
-  //font size values
-  --x0: 0.75rem;
-  --x1: 0.875rem;
-  --x2: 1rem;
-  --x3: 1.125rem;
-  --x4: 1.25rem;
-  --x5: 1.5rem;
-  --x6: 2rem;
-  --x7: 2.5rem;
-  --x8: 3.5rem;
-  --x9: 4.5rem;
-
   //font weight values
-  --w0: 300;
-  --w1: 400;
-  --w2: 500;
-  --w3: 600;
-  --w4: 700;
+  --primitives--size--text--weight--0: 300;
+  --primitives--size--text--weight--1: 400;
+  --primitives--size--text--weight--2: 500;
+  --primitives--size--text--weight--3: 600;
+  --primitives--size--text--weight--4: 700;
 
   //line height values
-  --h0: 1.5;
-  --h1: 1.3;
-  --h2: 1.2;
-  --h3: 1.1;
-  --h4: 1;
+  --primitives--size--text--height--0: 1.5;
+  --primitives--size--text--height--1: 1.3;
+  --primitives--size--text--height--2: 1.2;
+  --primitives--size--text--height--3: 1.1;
+  --primitives--size--text--height--4: 1;
 
   //letter spacing values
-  --s0: -0.011em;
-  --s1: -0.014em;
-  --s2: -0.019em;
-  --s3: -0.021em;
-  --s4: -0.022em;
+  --primitives--size--text--spacing--0: -0.011em;
+  --primitives--size--text--spacing--1: -0.014em;
+  --primitives--size--text--spacing--2: -0.019em;
+  --primitives--size--text--spacing--3: -0.021em;
+  --primitives--size--text--spacing--4: -0.022em;
 
   //border radius values
   --br0: 0.25rem;
@@ -68,69 +43,51 @@ html {
   --ar3: 9/16;
   --ar4: 16/9;
 
-  //button values
-  //prim values
-  --btn-bg: var(--col-2);
-  --btn-bc: var(--col-2);
-  --btn-fc: var(--col-0);
-  //general values
-  --btn-oc: var(--col-2-2);
-  --btn-fs: var(--x3);
-  --btn-fw: var(--w2);
-  --btn-icon-size: 1.2em;
-
-  //sec values
-  --btn-sec-bg: transparent;
-  --btn-sec-bc: var(--col-1);
-  --btn-sec-fc: var(--col-1);
-  //small values
-  --btn-sm-fs: var(--x2);
-  --btn-sm-fw: var(--w2);
-  --btn-sm-icon-size: 1em;
-
   //form values
-  --f-bg: var(--col-0);
-  --f-border: var(--col-0-1);
-  --f-radius: 0.5rem;
-  --f-outline: var(--col-2-2);
-  --f-text: var(--col-1-1);
-  --f-place: var(--col-1-2);
 
-  --f-padding: 0.5rem;
-  --f-label-size: 0.875em;
-  --f-txt-size: 0.75em;
+  // --f-bg: var(--col-0);
+  // --f-border: var(--col-0-1);
+  // --f-radius: 0.5rem;
+  // --f-outline: var(--col-1-4);
+  // --f-text: var(--col-0-4);
+  // --f-place: var(--col-0-3);
+
+  // --f-padding: 0.5rem;
+  // --f-label-size: 0.875em;
+  // --f-txt-size: 0.75em;
+
   --f-check-space: 0.5rem;
   --f-check-radius: 0.125rem;
-  --f-check-color: var(--col-2);
+  --f-check-color: var(--col-1);
   --f-check-icon: url("https://cdn.jsdelivr.net/gh/stefan-nube/nube-flow-pro@v0.2.0/nf-check_icon.svg");
+
   --f-radio-border: 1.2px;
 }
 
 // color palette
 $colors: (
-  "0": var(--col-0),
-  "0-1": var(--col-0-1),
-  "0-2": var(--col-0-2),
-  "1": var(--col-1),
-  "1-1": var(--col-1-1),
-  "1-2": var(--col-1-2),
-  "2": var(--col-2),
-  "2-1": var(--col-2-1),
-  "2-2": var(--col-2-2),
+  "0-0": var(--primitives--color--base--0-0),
+  "0-1": var(--primitives--color--base--0-1),
+  "0-2": var(--primitives--color--base--0-2),
+  "0-3": var(--primitives--color--base--0-3),
+  "0-4": var(--primitives--color--base--0-4),
+  "0-5": var(--primitives--color--base--0-5),
+  "1-0": var(--primitives--color--brand--1-0),
+  "1-1": var(--primitives--color--brand--1-1),
 );
 
 // font sizes
 $font: (
-  "x0": var(--x0),
-  "x1": var(--x1),
-  "x2": var(--x2),
-  "x3": var(--x3),
-  "x4": var(--x4),
-  "x5": var(--x5),
-  "x6": var(--x6),
-  "x7": var(--x7),
-  "x8": var(--x8),
-  "x9": var(--x9),
+  "0": var(--size--text--x0),
+  "1": var(--size--text--x1),
+  "2": var(--size--text--x2),
+  "3": var(--size--text--x3),
+  "4": var(--size--text--x4),
+  "5": var(--size--text--x5),
+  "6": var(--size--text--x6),
+  "7": var(--size--text--x7),
+  "8": var(--size--text--x8),
+  "9": var(--size--text--x9),
 );
 
 // font weight
@@ -162,9 +119,9 @@ $font-spacing: (
 
 // breakpoints
 $breakpoints: (
-  "m": 480px,
-  "ml": 768px,
-  "t": 992px,
+  "m": 479px,
+  "ml": 767px,
+  "t": 991px,
 );
 
 // spacing
@@ -214,3 +171,48 @@ $ratio: (
   "9x16": var(--ar3),
   "16x9": var(--ar4),
 );
+
+@media (max-width: map-get($breakpoints, "t")) {
+  html {
+    --x0: 0.75rem;
+    --x1: 0.875rem;
+    --x2: 1rem;
+    --x3: 1.125rem;
+    --x4: 1.25rem;
+    --x5: 1.5rem;
+    --x6: 2rem;
+    --x7: 2.25rem;
+    --x8: 3rem;
+    --x9: 3.75rem;
+  }
+}
+
+@media (max-width: map-get($breakpoints, "ml")) {
+  html {
+    --x0: 0.75rem;
+    --x1: 0.875rem;
+    --x2: 1rem;
+    --x3: 1.125rem;
+    --x4: 1.25rem;
+    --x5: 1.5rem;
+    --x6: 1.75rem;
+    --x7: 2.25rem;
+    --x8: 2.75rem;
+    --x9: 3.5rem;
+  }
+}
+
+@media (max-width: map-get($breakpoints, "m")) {
+  html {
+    --x0: 0.75rem;
+    --x1: 0.875rem;
+    --x2: 1rem;
+    --x3: 1.125rem;
+    --x4: 1.25rem;
+    --x5: 1.5rem;
+    --x6: 1.75rem;
+    --x7: 2rem;
+    --x8: 2.5rem;
+    --x9: 3.25rem;
+  }
+}

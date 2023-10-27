@@ -2,30 +2,30 @@
 @use "variables" as v;
 
 @each $key, $val in v.$font {
-  [class*="#{$key}"] {
+  [class*="lg_x#{$key}"] {
     font-size: $val;
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
+@media screen and (max-width: map-get(v.$breakpoints, "t")) {
   @each $key, $val in v.$font {
-    [class*="t_#{$key}"] {
+    [class*="md_x#{$key}"] {
       font-size: $val;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media screen and (max-width: map-get(v.$breakpoints, "ml")) {
   @each $key, $val in v.$font {
-    [class*="ml_#{$key}"] {
+    [class*="sm_x#{$key}"] {
       font-size: $val;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media screen and (max-width: map-get(v.$breakpoints, "m")) {
   @each $key, $val in v.$font {
-    [class*="m_#{$key}"] {
+    [class*="xs_x#{$key}"] {
       font-size: $val;
     }
   }
