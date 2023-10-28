@@ -1,32 +1,45 @@
-@use "sass:math";
-@use "variables" as v;
+// @use "variables" as v;
+// @use "sass:math";
 
-@each $key, $val in v.$font {
-  [class*="lg_x#{$key}"] {
-    font-size: $val;
-  }
-}
+// $font-size: (
+//   "0": var(--primitives--size--text--x0),
+//   "1": var(--primitives--size--text--x1),
+//   "2": var(--primitives--size--text--x2),
+//   "3": var(--primitives--size--text--x3),
+//   "4": var(--primitives--size--text--x4),
+//   "5": var(--primitives--size--text--x5),
+//   "6": var(--primitives--size--text--x6),
+//   "7": var(--primitives--size--text--x7),
+//   "8": var(--primitives--size--text--x8),
+//   "9": var(--primitives--size--text--x9),
+// );
 
-@media screen and (max-width: map-get(v.$breakpoints, "t")) {
-  @each $key, $val in v.$font {
-    [class*="md_x#{$key}"] {
-      font-size: $val;
-    }
-  }
-}
+// @each $key, $val in $font-size {
+//   [class*="lg_x#{$key}"] {
+//     font-size: $val;
+//   }
+// }
 
-@media screen and (max-width: map-get(v.$breakpoints, "ml")) {
-  @each $key, $val in v.$font {
-    [class*="sm_x#{$key}"] {
-      font-size: $val;
-    }
-  }
-}
+// @media screen and (max-width: map-get(v.$breakpoints, "t")) {
+//   @each $key, $val in $font-size {
+//     [class*="md_x#{$key}"] {
+//       font-size: $val;
+//     }
+//   }
+// }
 
-@media screen and (max-width: map-get(v.$breakpoints, "m")) {
-  @each $key, $val in v.$font {
-    [class*="xs_x#{$key}"] {
-      font-size: $val;
-    }
-  }
-}
+// @media screen and (max-width: map-get(v.$breakpoints, "ml")) {
+//   @each $key, $val in $font-size {
+//     [class*="sm_x#{$key}"] {
+//       font-size: $val;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: map-get(v.$breakpoints, "m")) {
+//   @each $key, $val in $font-size {
+//     [class*="xs_x#{$key}"] {
+//       font-size: $val;
+//     }
+//   }
+// }

@@ -1,130 +1,138 @@
-// @use "sass:math";
-// @use "variables" as v;
+@use "sass:math";
+@use "variables" as v;
 
-// // define mixin to generate padding values
-// @mixin generate-padding-values($prefix, $property, $multiplier) {
-//   $values: (
-//     "0": 0,
-//     "2": v.$space * 0.125,
-//     "4": v.$space * 0.25,
-//     "8": v.$space * 0.5,
-//     "12": v.$space * 0.75,
-//     "16": v.$space,
-//     "18": v.$space * 1.125,
-//     "20": v.$space * 1.25,
-//     "24": v.$space * 1.5 * $multiplier,
-//     "32": v.$space * 2 * $multiplier,
-//     "40": v.$space * 2.5 * $multiplier,
-//     "48": v.$space * 3 * $multiplier,
-//   );
+@mixin generate-padding-values($prefix, $property, $deviceLabel: "") {
+  $values: (
+    "0": 0,
+    "2": 0.125rem,
+    "4": 0.25rem,
+    "8": 0.5rem,
+    "12": 0.75rem,
+    "16": 1rem,
+    "18": 1.125rem,
+    "20": 1.25rem,
+    "24": 1.5rem,
+    "32": 2rem,
+    "40": 2.5rem,
+    "48": 3rem,
+  );
 
-//   @each $k, $v in $values {
-//     [class*="#{$prefix}#{$k}"] {
-//       #{$property}: $v;
-//     }
-//   }
-// }
+  @each $k, $v in $values {
+    [class*="#{$deviceLabel}#{$prefix}#{$k}"] {
+      #{$property}: $v;
+    }
+  }
+}
 
-// // define spacing values
-// $spacing: (
-//   "padding": (
-//     "prefix": "p",
-//     "property": "padding",
-//   ),
-//   "padding-top": (
-//     "prefix": "pt",
-//     "property": "padding-top",
-//   ),
-//   "padding-right": (
-//     "prefix": "pr",
-//     "property": "padding-right",
-//   ),
-//   "padding-bottom": (
-//     "prefix": "pb",
-//     "property": "padding-bottom",
-//   ),
-//   "padding-left": (
-//     "prefix": "pl",
-//     "property": "padding-left",
-//   ),
-//   "padding-inline": (
-//     "prefix": "ph",
-//     "property": "padding-inline",
-//   ),
-//   "padding-block": (
-//     "prefix": "pv",
-//     "property": "padding-block",
-//   ),
-// );
+$spacing: (
+  "padding": (
+    "prefix": "p",
+    "property": "padding",
+  ),
+  "padding-top": (
+    "prefix": "pt",
+    "property": "padding-top",
+  ),
+  "padding-right": (
+    "prefix": "pr",
+    "property": "padding-right",
+  ),
+  "padding-bottom": (
+    "prefix": "pb",
+    "property": "padding-bottom",
+  ),
+  "padding-left": (
+    "prefix": "pl",
+    "property": "padding-left",
+  ),
+  "padding-inline": (
+    "prefix": "ph",
+    "property": "padding-inline",
+  ),
+  "padding-block": (
+    "prefix": "pv",
+    "property": "padding-block",
+  ),
+);
 
-// // generate utility classes for spacing values
-// @each $property, $map in $spacing {
-//   $prefix: map-get($map, "prefix");
-//   $property: map-get($map, "property");
-//   @include generate-padding-values($prefix, $property, 1);
+@each $property, $map in $spacing {
+  $prefix: map-get($map, "prefix");
+  $property: map-get($map, "property");
 
-//   @media (max-width: #{map-get(v.$breakpoints, "t")}) {
-//     @include generate-padding-values($prefix, $property, 1);
-//   }
+  @include generate-padding-values($prefix, $property, "lg_");
 
-//   @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
-//     @include generate-padding-values($prefix, $property, 0.875);
-//   }
-// }
+  @media (max-width: #{map-get(v.$breakpoints, "t")}) {
+    @include generate-padding-values($prefix, $property, "md_");
+  }
 
-// // Gaps
+  @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
+    @include generate-padding-values($prefix, $property, "sm_");
+  }
 
-// // define mixin to generate gap values
-// @mixin generate-gap-values($property, $prefix, $multiplier) {
-//   $values: (
-//     "0": 0,
-//     "2": v.$space * 0.125,
-//     "4": v.$space * 0.25,
-//     "8": v.$space * 0.5,
-//     "12": v.$space * 0.75,
-//     "16": v.$space,
-//     "18": v.$space * 1.125,
-//     "20": v.$space * 1.25,
-//     "24": v.$space * 1.5,
-//     "32": v.$space * 2 * $multiplier,
-//     "40": v.$space * 2.5 * $multiplier,
-//     "48": v.$space * 3 * $multiplier,
-//     "60": v.$space * 3.75 * $multiplier,
-//     "80": v.$space * 5 * $multiplier,
-//     "120": v.$space * 7.5 * $multiplier,
-//   );
+  @media (max-width: #{map-get(v.$breakpoints, "m")}) {
+    @include generate-padding-values($prefix, $property, "xs_");
+  }
+}
 
-//   @each $k, $v in $values {
-//     [class*="#{$prefix}#{$k}"] {
-//       #{$property}: $v;
-//       display: flex;
-//       @if $prefix == "v" {
-//         flex-direction: column;
-//       }
-//     }
-//   }
-// }
+// Gaps
 
-// // define gap values
-// $gap-values: (
-//   "grid-column-gap": (
-//     "prefix": "h",
-//   ),
-//   "grid-row-gap": (
-//     "prefix": "v",
-//   ),
-// );
+// define mixin to generate gap values
+@mixin generate-gap-values($property, $prefix, $deviceLabel: "") {
+  $values: (
+    "0": 0,
+    "2": 0.125rem,
+    "4": 0.25rem,
+    "8": 0.5rem,
+    "12": 0.75rem,
+    "16": 1rem,
+    "18": 1.125rem,
+    "20": 1.25rem,
+    "24": 1.5rem,
+    "32": 2rem,
+    "40": 2.5rem,
+    "48": 3rem,
+    "56": 3.5rem,
+    "64": 4rem,
+    "72": 4.5rem,
+    "80": 5rem,
+    "120": 7.5rem,
+  );
 
-// // generate utility classes for gap values
-// @each $property, $map in $gap-values {
-//   $prefix: map-get($map, "prefix");
-//   @include generate-gap-values($property, $prefix, 1);
+  @each $k, $v in $values {
+    [class*="#{$deviceLabel}#{$prefix}#{$k}"] {
+      #{$property}: $v;
+      display: flex;
+      @if $prefix == "v" {
+        flex-direction: column;
+      }
+    }
+  }
+}
 
-//   @media (max-width: #{map-get(v.$breakpoints, "t")}) {
-//     @include generate-gap-values($property, $prefix, 1);
-//   }
+// define gap values
+$gap-values: (
+  "grid-column-gap": (
+    "prefix": "h",
+  ),
+  "grid-row-gap": (
+    "prefix": "v",
+  ),
+);
 
-//   @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
-//     @include generate-gap-values($property, $prefix, 0.875);
-//   }
-// }
+// generate utility classes for gap values
+@each $property, $map in $gap-values {
+  $prefix: map-get($map, "prefix");
+  @include generate-gap-values($property, $prefix, "lg_");
+
+  @media (max-width: #{map-get(v.$breakpoints, "t")}) {
+    @include generate-gap-values($property, $prefix, "md_");
+  }
+
+  @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
+    @include generate-gap-values($property, $prefix, "sm_");
+  }
+
+  @media (max-width: #{map-get(v.$breakpoints, "m")}) {
+    @include generate-gap-values($property, $prefix, "xs_");
+  }
+}

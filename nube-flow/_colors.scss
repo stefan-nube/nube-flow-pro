@@ -1,17 +1,27 @@
-@use "sass:math";
-@use "variables" as v;
+// @use "sass:math";
 
-@each $key, $val in v.$colors {
-  [class*="bg#{$key}"] {
-    background: $val;
-  }
-  [class*="fc#{$key}"] {
-    color: $val;
-  }
-  [class*="bc#{$key}"] {
-    border-color: $val;
-  }
-  [class*="sc#{$key}"] {
-    -webkit-text-stroke-color: $val;
-  }
-}
+// $colors: (
+//   "0-0": var(--primitives--color--base--0-0),
+//   "0-1": var(--primitives--color--base--0-1),
+//   "0-2": var(--primitives--color--base--0-2),
+//   "0-3": var(--primitives--color--base--0-3),
+//   "0-4": var(--primitives--color--base--0-4),
+//   "0-5": var(--primitives--color--base--0-5),
+//   "1-0": var(--primitives--color--brand--1-0),
+//   "1-1": var(--primitives--color--brand--1-1),
+// );
+
+// @each $key, $val in $colors {
+//   [class*="bg#{$key}"] {
+//     background: $val;
+//   }
+//   [class*="fc#{$key}"] {
+//     color: $val;
+//   }
+//   [class*="bc#{$key}"] {
+//     border-color: $val;
+//   }
+//   [class*="sc#{$key}"] {
+//     -webkit-text-stroke-color: $val;
+//   }
+// }

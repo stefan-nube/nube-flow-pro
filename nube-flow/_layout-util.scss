@@ -1,5 +1,9 @@
 @use "variables" as v;
 
+:root {
+  --primitives-size-grid-gutter: 0.75rem;
+}
+
 [class*="cnt"] {
   width: 90%;
   max-width: 90rem;
@@ -7,20 +11,16 @@
   margin-left: auto;
 }
 
-:root {
-  --grid-gap: 0.75rem;
-}
-
 [class*="rw"] {
   display: flex;
   flex-wrap: wrap;
-  margin-right: calc(-1 * var(--grid-gap));
-  margin-left: calc(-1 * var(--grid-gap));
+  margin-right: calc(-1 * var(--primitives-size-grid-gutter));
+  margin-left: calc(-1 * var(--primitives-size-grid-gutter));
 }
 
 [class*="clm"] {
-  padding-right: var(--grid-gap);
-  padding-left: var(--grid-gap);
+  padding-right: var(--primitives-size-grid-gutter);
+  padding-left: var(--primitives-size-grid-gutter);
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;

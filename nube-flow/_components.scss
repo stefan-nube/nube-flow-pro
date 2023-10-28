@@ -1,163 +1,163 @@
-@use "variables" as v;
+// @use "variables" as v;
 
-/* Insert custom code here to override predefined component styles. Learn more on Nube Flow docs @ */
-.btn {
-  border: solid;
-  /* Btn default values from local variables */
-  font-weight: var(--tokens--components--button--text-weight);
-  font-size: var(--tokens--components--button--text-size);
-  grid-column-gap: var(--tokens--components--button--gap);
-  border-radius: var(--tokens--components--button--radius);
-  height: var(--tokens--components--button--height);
-  padding-inline: var(--tokens--components--button--padding);
+// /* Insert custom code here to override predefined component styles. Learn more on Nube Flow docs @ */
+// .btn {
+//   border: solid;
+//   /* Btn default values from local variables */
+//   font-weight: var(--tokens--components--button--text-weight);
+//   font-size: var(--tokens--components--button--text-size);
+//   grid-column-gap: var(--tokens--components--button--gap);
+//   border-radius: var(--tokens--components--button--radius);
+//   height: var(--tokens--components--button--height);
+//   padding-inline: var(--tokens--components--button--padding);
 
-  /* Btn default static values */
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
+//   /* Btn default static values */
+//   box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   -webkit-box-sizing: border-box;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   line-height: 1;
+// }
 
-/* Btn prim values */
-.btn {
-  background: var(--tokens--components--button--prim--surface);
-  color: var(--tokens--components--button--prim--text);
-  border-color: var(--tokens--components--button--prim--border);
-  outline-color: var(--tokens--components--button--prim--outline);
-}
+// /* Btn prim values */
+// .btn {
+//   background: var(--tokens--components--button--prim--surface);
+//   color: var(--tokens--components--button--prim--text);
+//   border-color: var(--tokens--components--button--prim--border);
+//   outline-color: var(--tokens--components--button--prim--outline);
+// }
 
-/* Btn sec values */
-.btn[btn-type="secondary"] {
-  background: var(--tokens--components--button--sec--surface);
-  color: var(--tokens--components--button--sec--text);
-  border-color: var(--tokens--components--button--sec--border);
-  outline-color: var(--tokens--components--button--sec--outline);
-}
+// /* Btn sec values */
+// .btn[btn-type="secondary"] {
+//   background: var(--tokens--components--button--sec--surface);
+//   color: var(--tokens--components--button--sec--text);
+//   border-color: var(--tokens--components--button--sec--border);
+//   outline-color: var(--tokens--components--button--sec--outline);
+// }
 
-/* Btn ter values */
-.btn[btn-type="tertiary"] {
-  background: var(--tokens--components--button--ter--surface);
-  color: var(--tokens--components--button--ter--text);
-  border-color: var(--tokens--components--button--ter--border);
-  outline-color: var(--tokens--components--button--ter--outline);
-}
+// /* Btn ter values */
+// .btn[btn-type="tertiary"] {
+//   background: var(--tokens--components--button--ter--surface);
+//   color: var(--tokens--components--button--ter--text);
+//   border-color: var(--tokens--components--button--ter--border);
+//   outline-color: var(--tokens--components--button--ter--outline);
+// }
 
-/* Btn icon values */
-.btn > .w-embed {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--tokens--components--button--icon-size);
-  height: var(--tokens--components--button--icon-size);
-}
-.btn svg {
-  width: auto;
-  height: 100%;
-}
-.btn svg path {
-  fill: currentColor !important;
-}
+// /* Btn icon values */
+// .btn > .w-embed {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: var(--tokens--components--button--icon-size);
+//   height: var(--tokens--components--button--icon-size);
+// }
+// .btn svg {
+//   width: auto;
+//   height: 100%;
+// }
+// .btn svg path {
+//   fill: currentColor !important;
+// }
 
-/* Btn extra default values */
-.btn[icon-side="left"] {
-  flex-direction: row-reverse;
-}
-.btn[btn-full="true"] {
-  width: 100%;
-}
+// /* Btn extra default values */
+// .btn[icon-side="left"] {
+//   flex-direction: row-reverse;
+// }
+// .btn[btn-full="true"] {
+//   width: 100%;
+// }
 
-.w-input,
-.w-select,
-.w-checkbox-input,
-.w-radio-input {
-  background-color: var(--tokens--components--form--input--surface);
-  border-color: var(--tokens--components--form--input--border);
-  color: var(--tokens--components--form--input--text);
-  outline-color: var(--tokens--components--form--input--outline);
-  padding: var(--tokens--components--form--input--padding);
-  margin-bottom: 0;
-  border-radius: var(--tokens--components--form--input--radius);
-}
+// .w-input,
+// .w-select,
+// .w-checkbox-input,
+// .w-radio-input {
+//   background-color: var(--tokens--components--form--input--surface);
+//   border-color: var(--tokens--components--form--input--border);
+//   color: var(--tokens--components--form--input--text);
+//   outline-color: var(--tokens--components--form--input--outline);
+//   padding: var(--tokens--components--form--input--padding);
+//   margin-bottom: 0;
+//   border-radius: var(--tokens--components--form--input--radius);
+// }
 
-.w-input::placeholder,
-.w-select::placeholder {
-  color: var(--tokens--components--form--input--placeholder);
-}
+// .w-input::placeholder,
+// .w-select::placeholder {
+//   color: var(--tokens--components--form--input--placeholder);
+// }
 
-.input-label {
-  font-size: var(--tokens--components--form--input--label--size);
-}
+// .input-label {
+//   font-size: var(--tokens--components--form--input--label--size);
+// }
 
-.input-des {
-  font-size: var(--tokens--components--form--input--description--text-size);
-  color: var(--tokens--components--form--input--description--text);
-}
+// .input-des {
+//   font-size: var(--tokens--components--form--input--description--text-size);
+//   color: var(--tokens--components--form--input--description--text);
+// }
 
-.w-checkbox {
-  margin-bottom: 0;
-  padding-left: 0;
-  display: flex;
-  align-items: center;
-}
+// .w-checkbox {
+//   margin-bottom: 0;
+//   padding-left: 0;
+//   display: flex;
+//   align-items: center;
+// }
 
-.w-checkbox-input {
-  margin: 0;
-  float: none;
-  border-radius: var(--tokens--components--form--check--radius);
-}
+// .w-checkbox-input {
+//   margin: 0;
+//   float: none;
+//   border-radius: var(--tokens--components--form--check--radius);
+// }
 
-.w-checkbox > .w-form-label {
-  padding-left: var(--tokens--components--form--check--gap);
-}
+// .w-checkbox > .w-form-label {
+//   padding-left: var(--tokens--components--form--check--gap);
+// }
 
-.input.w-checkbox-input.w--redirected-checked {
-  background-color: var(--tokens--components--form--check--surface);
-  border-color: var(--tokens--components--form--check--surface);
-}
+// .input.w-checkbox-input.w--redirected-checked {
+//   background-color: var(--tokens--components--form--check--surface);
+//   border-color: var(--tokens--components--form--check--surface);
+// }
 
-.input.w-checkbox-input--inputType-custom.w--redirected-checked {
-  background-image: var(--tokens--components--form--check--icon);
-}
+// .input.w-checkbox-input--inputType-custom.w--redirected-checked {
+//   background-image: var(--tokens--components--form--check--icon);
+// }
 
-.w-radio {
-  margin-bottom: 0;
-  padding-left: 0;
-  display: flex;
-  align-items: center;
-}
+// .w-radio {
+//   margin-bottom: 0;
+//   padding-left: 0;
+//   display: flex;
+//   align-items: center;
+// }
 
-.w-radio-input {
-  margin: 0;
-  float: none;
-  border-radius: 50%;
-}
+// .w-radio-input {
+//   margin: 0;
+//   float: none;
+//   border-radius: 50%;
+// }
 
-.w-radio > .w-form-label {
-  padding-left: var(--tokens--components--form--radio--gap);
-}
+// .w-radio > .w-form-label {
+//   padding-left: var(--tokens--components--form--radio--gap);
+// }
 
-.input.w-radio-input.w--redirected-checked {
-  border-color: var(--tokens--components--form--radio--surface);
-  background-color: var(--tokens--components--form--radio--surface);
-}
+// .input.w-radio-input.w--redirected-checked {
+//   border-color: var(--tokens--components--form--radio--surface);
+//   background-color: var(--tokens--components--form--radio--surface);
+// }
 
-.input.w-form-formradioinput--inputType-custom.w--redirected-focus {
-  border-width: var(--tokens--components--form--radio--border-width);
-}
+// .input.w-form-formradioinput--inputType-custom.w--redirected-focus {
+//   border-width: var(--tokens--components--form--radio--border-width);
+// }
 
-.input.w-form-formradioinput--inputType-custom.w--redirected-checked {
-  border-width: var(--tokens--components--form--radio--border-width);
-}
+// .input.w-form-formradioinput--inputType-custom.w--redirected-checked {
+//   border-width: var(--tokens--components--form--radio--border-width);
+// }
 
-textarea {
-  resize: vertical;
-  min-height: 7.5rem;
-}
+// textarea {
+//   resize: vertical;
+//   min-height: 7.5rem;
+// }
 
-.w-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
+// .w-select {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+// }
