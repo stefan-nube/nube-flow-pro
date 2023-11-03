@@ -2330,7 +2330,7 @@
   }
 }
 [class*=lg_ed0] {
-  display: hidden;
+  display: none;
 }
 
 [class*=lg_ed1] {
@@ -2359,7 +2359,7 @@
 
 @media (max-width: 991px) {
   [class*=md_ed0] {
-    display: hidden;
+    display: none;
   }
   [class*=md_ed1] {
     display: block;
@@ -2382,7 +2382,7 @@
 }
 @media (max-width: 767px) {
   [class*=sm_ed0] {
-    display: hidden;
+    display: none;
   }
   [class*=sm_ed1] {
     display: block;
@@ -2405,7 +2405,7 @@
 }
 @media (max-width: 479px) {
   [class*=xs_ed0] {
-    display: hidden;
+    display: none;
   }
   [class*=xs_ed1] {
     display: block;
