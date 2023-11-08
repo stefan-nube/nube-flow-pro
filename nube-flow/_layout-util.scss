@@ -2,6 +2,7 @@
 
 :root {
   --primitives-size-grid-gutter: 0.75rem;
+  --primitives-size-row-gap: 0rem;
 }
 
 [class*="cnt"] {
@@ -16,6 +17,154 @@
   flex-wrap: wrap;
   margin-right: calc(-1 * var(--primitives-size-grid-gutter));
   margin-left: calc(-1 * var(--primitives-size-grid-gutter));
+  grid-row-gap: var(--primitives-size-row-gap);
+}
+
+$grid-gutter: (
+  "--primitives-size-grid-gutter": (
+    "values": (
+      "0": 0,
+      "2": 0.125rem / 2,
+      "4": 0.25rem / 2,
+      "8": 0.5rem / 2,
+      "12": 0.75rem / 2,
+      "16": 1rem / 2,
+      "18": 1.125rem / 2,
+      "20": 1.25rem / 2,
+      "24": 1.5rem / 2,
+      "32": 2rem / 2,
+      "40": 2.5rem / 2,
+      "48": 3rem / 2,
+      "56": 3.5rem / 2,
+      "64": 4rem / 2,
+      "72": 4.5rem / 2,
+      "80": 5rem / 2,
+      "120": 7.5rem / 2,
+    ),
+  ),
+);
+
+@each $property, $map in $grid-gutter {
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    [class*="rw"][class*="xs_hg#{$k}"] {
+      #{$property}: $v;
+    }
+  }
+}
+
+// generate landscape gaps
+@media (min-width: #{map-get(v.$breakpoints, "m")}) {
+  @each $property, $map in $grid-gutter {
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="rw"][class*="sm_hg#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// generate tablet gaps
+@media (min-width: #{map-get(v.$breakpoints, "ml")}) {
+  @each $property, $map in $grid-gutter {
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="rw"][class*="md_hg#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// generate desktop gaps
+@media (min-width: #{map-get(v.$breakpoints, "t")}) {
+  @each $property, $map in $grid-gutter {
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="rw"][class*="lg_hg#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// ROW GAPS
+
+$row-gap: (
+  "--primitives-size-row-gap": (
+    "values": (
+      "0": 0,
+      "2": 0.125rem,
+      "4": 0.25rem,
+      "8": 0.5rem,
+      "12": 0.75rem,
+      "16": 1rem,
+      "18": 1.125rem,
+      "20": 1.25rem,
+      "24": 1.5rem,
+      "32": 2rem,
+      "40": 2.5rem,
+      "48": 3rem,
+      "56": 3.5rem,
+      "64": 4rem,
+      "72": 4.5rem,
+      "80": 5rem,
+      "120": 7.5rem,
+    ),
+  ),
+);
+
+@each $property, $map in $row-gap {
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    [class*="rw"][class*="xs_vg#{$k}"] {
+      #{$property}: $v;
+    }
+  }
+}
+// generate landscape gaps
+@media (min-width: #{map-get(v.$breakpoints, "m")}) {
+  @each $property, $map in $row-gap {
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="rw"][class*="sm_vg#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// generate tablet gaps
+@media (min-width: #{map-get(v.$breakpoints, "ml")}) {
+  @each $property, $map in $row-gap {
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="rw"][class*="md_vg#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// generate desktop gaps
+@media (min-width: #{map-get(v.$breakpoints, "t")}) {
+  @each $property, $map in $row-gap {
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="rw"][class*="lg_vg#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
 }
 
 [class*="clm"] {
@@ -28,7 +177,6 @@
 
 $columns: (
   "flex-basis": (
-    "prefix": "xs",
     "values": (
       "1": 8.33%,
       "2": 16.666%,

@@ -59,18 +59,18 @@ $spacing: (
   $prefix: map-get($map, "prefix");
   $property: map-get($map, "property");
 
-  @include generate-padding-values($prefix, $property, "lg_");
+  @include generate-padding-values($prefix, $property, "xs_");
 
-  @media (max-width: #{map-get(v.$breakpoints, "t")}) {
-    @include generate-padding-values($prefix, $property, "md_");
-  }
-
-  @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
+  @media (min-width: #{map-get(v.$breakpoints, "m")}) {
     @include generate-padding-values($prefix, $property, "sm_");
   }
 
-  @media (max-width: #{map-get(v.$breakpoints, "m")}) {
-    @include generate-padding-values($prefix, $property, "xs_");
+  @media (min-width: #{map-get(v.$breakpoints, "ml")}) {
+    @include generate-padding-values($prefix, $property, "md_");
+  }
+
+  @media (min-width: #{map-get(v.$breakpoints, "t")}) {
+    @include generate-padding-values($prefix, $property, "lg_");
   }
 }
 
@@ -122,17 +122,17 @@ $gap-values: (
 // generate utility classes for gap values
 @each $property, $map in $gap-values {
   $prefix: map-get($map, "prefix");
-  @include generate-gap-values($property, $prefix, "lg_");
+  @include generate-gap-values($property, $prefix, "xs_");
 
-  @media (max-width: #{map-get(v.$breakpoints, "t")}) {
-    @include generate-gap-values($property, $prefix, "md_");
-  }
-
-  @media (max-width: #{map-get(v.$breakpoints, "ml")}) {
+  @media (min-width: #{map-get(v.$breakpoints, "m")}) {
     @include generate-gap-values($property, $prefix, "sm_");
   }
 
-  @media (max-width: #{map-get(v.$breakpoints, "m")}) {
-    @include generate-gap-values($property, $prefix, "xs_");
+  @media (min-width: #{map-get(v.$breakpoints, "ml")}) {
+    @include generate-gap-values($property, $prefix, "md_");
+  }
+
+  @media (min-width: #{map-get(v.$breakpoints, "t")}) {
+    @include generate-gap-values($property, $prefix, "lg_");
   }
 }
