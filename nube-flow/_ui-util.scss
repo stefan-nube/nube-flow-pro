@@ -37,26 +37,14 @@ $ui-common: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="lg_#{$prefix}#{$k}"] {
+    [class*="xs_#{$prefix}#{$k}"] {
       #{$property}: $v;
+      display: flex;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
-  @each $property, $map in $ui-common {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values");
-
-    @each $k, $v in $values {
-      [class*="md_#{$prefix}#{$k}"] {
-        #{$property}: $v;
-      }
-    }
-  }
-}
-
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $ui-common {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -64,19 +52,35 @@ $ui-common: (
     @each $k, $v in $values {
       [class*="sm_#{$prefix}#{$k}"] {
         #{$property}: $v;
+        display: flex;
       }
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
   @each $property, $map in $ui-common {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="md_#{$prefix}#{$k}"] {
         #{$property}: $v;
+        display: flex;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $ui-common {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="lg_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+        display: flex;
       }
     }
   }
@@ -100,26 +104,13 @@ $txt-align: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="lg_#{$prefix}#{$k}"] {
+    [class*="xs_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
-  @each $property, $map in $txt-align {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values");
-
-    @each $k, $v in $values {
-      [class*="md_#{$prefix}#{$k}"] {
-        #{$property}: $v;
-      }
-    }
-  }
-}
-
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $txt-align {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -132,13 +123,26 @@ $txt-align: (
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
   @each $property, $map in $txt-align {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="md_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $txt-align {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="lg_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -215,26 +219,13 @@ $display: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="lg_#{$prefix}#{$k}"] {
+    [class*="xs_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
-  @each $property, $map in $display {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values");
-
-    @each $k, $v in $values {
-      [class*="md_#{$prefix}#{$k}"] {
-        #{$property}: $v;
-      }
-    }
-  }
-}
-
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $display {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -247,13 +238,26 @@ $display: (
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
   @each $property, $map in $display {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="md_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $display {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="lg_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -280,26 +284,13 @@ $position: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="lg_#{$prefix}#{$k}"] {
+    [class*="xs_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
-  @each $property, $map in $position {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values");
-
-    @each $k, $v in $values {
-      [class*="md_#{$prefix}#{$k}"] {
-        #{$property}: $v;
-      }
-    }
-  }
-}
-
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $position {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -312,7 +303,20 @@ $position: (
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
+  @each $property, $map in $position {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="md_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
   @each $property, $map in $position {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -344,26 +348,13 @@ $overflow: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="lg_#{$prefix}#{$k}"] {
+    [class*="xs_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
-  @each $property, $map in $overflow {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values");
-
-    @each $k, $v in $values {
-      [class*="md_#{$prefix}#{$k}"] {
-        #{$property}: $v;
-      }
-    }
-  }
-}
-
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $overflow {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -376,13 +367,26 @@ $overflow: (
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
   @each $property, $map in $overflow {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="md_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $overflow {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="lg_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -408,26 +412,13 @@ $overflow-x: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="lg_#{$prefix}#{$k}"] {
+    [class*="xs_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
-  @each $property, $map in $overflow-x {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values");
-
-    @each $k, $v in $values {
-      [class*="md_#{$prefix}#{$k}"] {
-        #{$property}: $v;
-      }
-    }
-  }
-}
-
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $overflow-x {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -440,13 +431,26 @@ $overflow-x: (
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
   @each $property, $map in $overflow-x {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="md_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $overflow-x {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="lg_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
@@ -472,26 +476,13 @@ $overflow-y: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="lg_#{$prefix}#{$k}"] {
+    [class*="xs_#{$prefix}#{$k}"] {
       #{$property}: $v;
     }
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "t")) {
-  @each $property, $map in $overflow-y {
-    $prefix: map-get($map, "prefix");
-    $values: map-get($map, "values");
-
-    @each $k, $v in $values {
-      [class*="md_#{$prefix}#{$k}"] {
-        #{$property}: $v;
-      }
-    }
-  }
-}
-
-@media (max-width: map-get(v.$breakpoints, "ml")) {
+@media (min-width: map-get(v.$breakpoints, "m")) {
   @each $property, $map in $overflow-y {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
@@ -504,13 +495,26 @@ $overflow-y: (
   }
 }
 
-@media (max-width: map-get(v.$breakpoints, "m")) {
+@media (min-width: map-get(v.$breakpoints, "ml")) {
   @each $property, $map in $overflow-y {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="md_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $overflow-y {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="lg_#{$prefix}#{$k}"] {
         #{$property}: $v;
       }
     }
