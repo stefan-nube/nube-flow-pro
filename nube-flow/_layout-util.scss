@@ -198,7 +198,7 @@ $columns: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    [class*="clm"][class*="xs#{$k}"] {
+    [class*="clm"][class*="xs_#{$k}"] {
       #{$property}: $v;
       max-width: $v;
       flex-grow: 1;
@@ -213,7 +213,7 @@ $columns: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="clm"][class*="sm#{$k}"] {
+      [class*="clm"][class*="sm_#{$k}"] {
         #{$property}: $v;
         max-width: $v;
         flex-grow: 1;
@@ -229,7 +229,7 @@ $columns: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="clm"][class*="md#{$k}"] {
+      [class*="clm"][class*="md_#{$k}"] {
         #{$property}: $v;
         max-width: $v;
         flex-grow: 1;
@@ -245,7 +245,7 @@ $columns: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="clm"][class*="lg#{$k}"] {
+      [class*="clm"][class*="lg_#{$k}"] {
         #{$property}: $v;
         max-width: $v;
         flex-grow: 1;
