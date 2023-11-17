@@ -523,7 +523,7 @@ $icons: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="sm_#{$prefix}#{$k}"] {
         #{$property}: $v;
         display: flex;
         flex-direction: column;
@@ -548,7 +548,7 @@ $icons: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="md_#{$prefix}#{$k}"] {
         #{$property}: $v;
         display: flex;
         flex-direction: column;
@@ -573,7 +573,7 @@ $icons: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}#{$k}"] {
+      [class*="lg_#{$prefix}#{$k}"] {
         #{$property}: $v;
         display: flex;
         flex-direction: column;
@@ -636,7 +636,7 @@ $icons-rel: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}-#{$k}"] {
+      [class*="sm_#{$prefix}-#{$k}"] {
         #{$property}: $v;
         display: flex;
         flex-direction: column;
@@ -661,7 +661,7 @@ $icons-rel: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}-#{$k}"] {
+      [class*="md_#{$prefix}-#{$k}"] {
         #{$property}: $v;
         display: flex;
         flex-direction: column;
@@ -686,7 +686,7 @@ $icons-rel: (
     $values: map-get($map, "values");
 
     @each $k, $v in $values {
-      [class*="xs_#{$prefix}-#{$k}"] {
+      [class*="lg_#{$prefix}-#{$k}"] {
         #{$property}: $v;
         display: flex;
         flex-direction: column;
