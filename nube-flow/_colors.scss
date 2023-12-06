@@ -7,13 +7,13 @@ $surface: (
 
 @each $key, $val in $surface {
   [class*="bgs#{$key}"] {
-    background: $val;
+    background: $val !important;
   }
   [class*="bcs#{$key}"] {
-    border-color: $val;
+    border-color: $val !important;
   }
   [class*="ocs#{$key}"] {
-    outline-color: $val;
+    outline-color: $val !important;
   }
 }
 
@@ -26,9 +26,9 @@ $text: (
 
 @each $key, $val in $text {
   [class*="fct#{$key}"] {
-    color: $val;
+    color: $val !important;
   }
   [class*="sct#{$key}"] {
-    -webkit-text-stroke-color: $val;
+    -webkit-text-stroke-color: $val !important;
   }
 }
