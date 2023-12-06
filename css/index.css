@@ -312,12 +312,36 @@ a,
   -webkit-text-stroke-color: var(--tokens--color--text--0) !important;
 }
 
+[class*=bgt0] {
+  background: var(--tokens--color--text--0) !important;
+}
+
+[class*=bct0] {
+  border-color: var(--tokens--color--text--0) !important;
+}
+
+[class*=oct0] {
+  outline-color: var(--tokens--color--text--0) !important;
+}
+
 [class*=fct1] {
   color: var(--tokens--color--text--1) !important;
 }
 
 [class*=sct1] {
   -webkit-text-stroke-color: var(--tokens--color--text--1) !important;
+}
+
+[class*=bgt1] {
+  background: var(--tokens--color--text--1) !important;
+}
+
+[class*=bct1] {
+  border-color: var(--tokens--color--text--1) !important;
+}
+
+[class*=oct1] {
+  outline-color: var(--tokens--color--text--1) !important;
 }
 
 [class*=fct2] {
@@ -328,12 +352,36 @@ a,
   -webkit-text-stroke-color: var(--tokens--color--text--2) !important;
 }
 
+[class*=bgt2] {
+  background: var(--tokens--color--text--2) !important;
+}
+
+[class*=bct2] {
+  border-color: var(--tokens--color--text--2) !important;
+}
+
+[class*=oct2] {
+  outline-color: var(--tokens--color--text--2) !important;
+}
+
 [class*=fct3] {
   color: var(--tokens--color--text--3) !important;
 }
 
 [class*=sct3] {
   -webkit-text-stroke-color: var(--tokens--color--text--3) !important;
+}
+
+[class*=bgt3] {
+  background: var(--tokens--color--text--3) !important;
+}
+
+[class*=bct3] {
+  border-color: var(--tokens--color--text--3) !important;
+}
+
+[class*=oct3] {
+  outline-color: var(--tokens--color--text--3) !important;
 }
 
 :root {

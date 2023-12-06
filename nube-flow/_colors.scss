@@ -31,4 +31,13 @@ $text: (
   [class*="sct#{$key}"] {
     -webkit-text-stroke-color: $val !important;
   }
+  [class*="bgt#{$key}"] {
+    background: $val !important;
+  }
+  [class*="bct#{$key}"] {
+    border-color: $val !important;
+  }
+  [class*="oct#{$key}"] {
+    outline-color: $val !important;
+  }
 }
