@@ -257,83 +257,83 @@ a,
 }
 
 [class*=bgs0] {
-  background: var(--tokens--color--surface--0);
+  background: var(--tokens--color--surface--0) !important;
 }
 
 [class*=bcs0] {
-  border-color: var(--tokens--color--surface--0);
+  border-color: var(--tokens--color--surface--0) !important;
 }
 
 [class*=ocs0] {
-  outline-color: var(--tokens--color--surface--0);
+  outline-color: var(--tokens--color--surface--0) !important;
 }
 
 [class*=bgs1] {
-  background: var(--tokens--color--surface--1);
+  background: var(--tokens--color--surface--1) !important;
 }
 
 [class*=bcs1] {
-  border-color: var(--tokens--color--surface--1);
+  border-color: var(--tokens--color--surface--1) !important;
 }
 
 [class*=ocs1] {
-  outline-color: var(--tokens--color--surface--1);
+  outline-color: var(--tokens--color--surface--1) !important;
 }
 
 [class*=bgs2] {
-  background: var(--tokens--color--surface--2);
+  background: var(--tokens--color--surface--2) !important;
 }
 
 [class*=bcs2] {
-  border-color: var(--tokens--color--surface--2);
+  border-color: var(--tokens--color--surface--2) !important;
 }
 
 [class*=ocs2] {
-  outline-color: var(--tokens--color--surface--2);
+  outline-color: var(--tokens--color--surface--2) !important;
 }
 
 [class*=bgs3] {
-  background: var(--tokens--color--surface--3);
+  background: var(--tokens--color--surface--3) !important;
 }
 
 [class*=bcs3] {
-  border-color: var(--tokens--color--surface--3);
+  border-color: var(--tokens--color--surface--3) !important;
 }
 
 [class*=ocs3] {
-  outline-color: var(--tokens--color--surface--3);
+  outline-color: var(--tokens--color--surface--3) !important;
 }
 
 [class*=fct0] {
-  color: var(--tokens--color--text--0);
+  color: var(--tokens--color--text--0) !important;
 }
 
 [class*=sct0] {
-  -webkit-text-stroke-color: var(--tokens--color--text--0);
+  -webkit-text-stroke-color: var(--tokens--color--text--0) !important;
 }
 
 [class*=fct1] {
-  color: var(--tokens--color--text--1);
+  color: var(--tokens--color--text--1) !important;
 }
 
 [class*=sct1] {
-  -webkit-text-stroke-color: var(--tokens--color--text--1);
+  -webkit-text-stroke-color: var(--tokens--color--text--1) !important;
 }
 
 [class*=fct2] {
-  color: var(--tokens--color--text--2);
+  color: var(--tokens--color--text--2) !important;
 }
 
 [class*=sct2] {
-  -webkit-text-stroke-color: var(--tokens--color--text--2);
+  -webkit-text-stroke-color: var(--tokens--color--text--2) !important;
 }
 
 [class*=fct3] {
-  color: var(--tokens--color--text--3);
+  color: var(--tokens--color--text--3) !important;
 }
 
 [class*=sct3] {
-  -webkit-text-stroke-color: var(--tokens--color--text--3);
+  -webkit-text-stroke-color: var(--tokens--color--text--3) !important;
 }
 
 :root {
