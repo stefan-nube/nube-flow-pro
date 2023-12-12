@@ -118,6 +118,9 @@ $spacing: (
       @if $prefix == "v" {
         flex-direction: column;
       }
+      @if $prefix == "h" {
+        flex-direction: row;
+      }
     }
   }
 }
