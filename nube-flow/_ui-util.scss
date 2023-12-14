@@ -8,6 +8,8 @@ $ui-common: (
     "values": (
       "0": column,
       "1": row,
+      "2": column-reverse,
+      "3": row-reverse,
     ),
   ),
   "justify-content": (
@@ -28,6 +30,25 @@ $ui-common: (
       "2": end,
       "3": stretch,
       "4": baseline,
+    ),
+  ),
+  "flex-wrap": (
+    "prefix": "fw",
+    "values": (
+      "0": nowrap,
+      "1": wrap,
+      "2": wrap-reverse,
+    ),
+  ),
+  "align-content": (
+    "prefix": "fac",
+    "values": (
+      "0": flex-start,
+      "1": center,
+      "2": flex-end,
+      "3": stretch,
+      "4": space-between,
+      "5": space-around,
     ),
   ),
 );
@@ -700,6 +721,77 @@ $icons-rel: (
         flex-direction: column;
         justify-content: center;
         align-items: center;
+      }
+    }
+  }
+}
+
+// Border radius ////////////////////////////////////////////////////////////////////////
+
+$boder-radius: (
+  "border-radius": (
+    "prefix": "br",
+    "values": (
+      "0": 0,
+      "2": 0.125rem,
+      "4": 0.25rem,
+      "8": 0.5rem,
+      "12": 0.75rem,
+      "16": 1rem,
+      "18": 1.125rem,
+      "20": 1.25rem,
+      "24": 1.5rem,
+      "32": 2rem,
+      "40": 2.5rem,
+    ),
+  ),
+);
+
+@each $property, $map in $boder-radius {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    [class*="xs_#{$prefix}#{$k}"] {
+      #{$property}: $v;
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "m")) {
+  @each $property, $map in $boder-radius {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="sm_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "ml")) {
+  @each $property, $map in $boder-radius {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="md_#{$prefix}#{$k}"] {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get(v.$breakpoints, "t")) {
+  @each $property, $map in $boder-radius {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+      [class*="lg_#{$prefix}#{$k}"] {
+        #{$property}: $v;
       }
     }
   }
